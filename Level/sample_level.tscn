@@ -13,6 +13,12 @@ tile_map_data = PackedByteArray("AAD+/0EAAAAEABwAAAD+/0IAAAAEAB0AAAD+/0MAAAAEAB4
 [node name="CharacterBody2D" parent="." index="2" unique_id=281008383]
 position = Vector2(1256, 853)
 
+[node name="Control" type="Control" parent="CharacterBody2D" index="2" unique_id=1742517584]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="RichTextLabel" parent="Control" parent_id_path=PackedInt32Array(1355342073) index="0" unique_id=1254849139]
 layout_mode = 1
 anchors_preset = -1

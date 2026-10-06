@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="toptoptostgame"
-run/main_scene="uid://bqf5ckw75fn22"
+run/main_scene="uid://ih6qltlbuhf0"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
