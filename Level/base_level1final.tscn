@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://ih6qltlbuhf0" path="res://Level/base_level.tscn" id="1_6k0ww"]
 [ext_resource type="Texture2D" uid="uid://buq7iiheqg6s0" path="res://Assets/Backround_assests.png" id="2_0lj66"]
 [ext_resource type="Texture2D" uid="uid://cipjg8xbx2006" path="res://Assets/assetsheet.png" id="3_sgk5g"]
-[ext_resource type="Script" uid="uid://ds02ib5nh84ce" path="res://Level/rich_text_label.gd" id="4_0lj66"]
 [ext_resource type="Texture2D" uid="uid://6c13iokorcts" path="res://assetsheetupdate.png" id="4_jc44q"]
 [ext_resource type="Texture2D" uid="uid://bjcexaxitffpm" path="res://ates3.png" id="5_2frpf"]
 
@@ -22091,6 +22090,9 @@ sources/0 = SubResource("TileSetAtlasSource_5vx1e")
 sources/1 = SubResource("TileSetAtlasSource_nqmwb")
 sources/2 = SubResource("TileSetAtlasSource_u2b2s")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwc2x"]
+size = Vector2(243.33774, 214.21638)
+
 [node name="BaseLevel" unique_id=1431919195 instance=ExtResource("1_6k0ww")]
 
 [node name="BackgroundLayer" parent="." index="0" unique_id=1209021657]
@@ -22116,22 +22118,21 @@ tile_map_data = PackedByteArray("AAD//zEAAAAEABwAAAD//zIAAAAEAB0AAAD//zMAAAAEAB4
 tile_set = SubResource("TileSet_nm75q")
 
 [node name="CharacterBody2D" parent="." index="2" unique_id=281008383]
-position = Vector2(475, 673)
+position = Vector2(447, 679)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" index="2" unique_id=281741686]
 scale = Vector2(4, 4)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer" parent_id_path=PackedInt32Array(1147362603) index="3" unique_id=989577454]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterBody2D/Control/VBoxContainer" parent_id_path=PackedInt32Array(1147362603) index="3" unique_id=989577454]
 layout_mode = 2
 
-[node name="CharacterBody2D_Control#RichTextLabel" type="RichTextLabel" parent="Control" parent_id_path=PackedInt32Array(1355342073) index="1" unique_id=1254849139]
-layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 2.108
-offset_left = -65.0
-offset_top = -8.0
-offset_right = 82.0
-offset_bottom = -20.32
-theme_override_font_sizes/normal_font_size = 50
-text = "00:00"
-script = ExtResource("4_0lj66")
+[node name="Area2D" type="Area2D" parent="." index="3" unique_id=531084256]
+position = Vector2(412, -5646)
+scale = Vector2(3.3554187, 2.9969711)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=659030091]
+position = Vector2(-3.3527756, -17.35083)
+scale = Vector2(1, 0.9999999)
+shape = SubResource("RectangleShape2D_cwc2x")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

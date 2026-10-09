@@ -17464,7 +17464,24 @@ tile_set = SubResource("TileSet_nm75q")
 position = Vector2(821, 525)
 scale = Vector2(0.25, 0.25)
 
-[node name="Control" type="Control" parent="CharacterBody2D" unique_id=1355342073]
+[node name="Control" type="Control" parent="CharacterBody2D" unique_id=1423946985]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CharacterBody2D/Control" unique_id=1254849139]
+layout_mode = 0
+offset_left = -148.0
+offset_top = -1808.0
+offset_right = 3.0
+offset_bottom = -1745.0
+scale = Vector2(8.037277, 8.394065)
+theme_override_font_sizes/normal_font_size = 50
+text = "00:00"
+script = ExtResource("4_3o4py")
+
+[node name="Control2" type="Control" parent="CharacterBody2D" unique_id=1355342073]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 316.0
@@ -17472,46 +17489,35 @@ offset_top = -1728.0
 offset_right = 490.0
 offset_bottom = -1688.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CharacterBody2D/Control" unique_id=1147362603]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterBody2D/Control2" unique_id=1147362603]
 layout_mode = 0
-offset_left = -1688.0
-offset_top = 524.0
-offset_right = -1537.0
-offset_bottom = 625.0
-scale = Vector2(24.117777, 24.193218)
+offset_left = -352.99997
+offset_top = 102.00001
+offset_right = -244.99997
+offset_bottom = 203.0
+scale = Vector2(7.3434796, 6.1126924)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CharacterBody2D/Control/VBoxContainer" unique_id=737952737]
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterBody2D/Control2/VBoxContainer" unique_id=737952737]
 layout_mode = 2
 
-[node name="NewRun" type="Button" parent="CharacterBody2D/Control/VBoxContainer/HBoxContainer" unique_id=611200326]
+[node name="NewRun" type="Button" parent="CharacterBody2D/Control2/VBoxContainer/HBoxContainer" unique_id=611200326]
 layout_mode = 2
 text = "New Run"
 
-[node name="LineEdit" type="LineEdit" parent="CharacterBody2D/Control/VBoxContainer/HBoxContainer" unique_id=487420853]
+[node name="LineEdit" type="LineEdit" parent="CharacterBody2D/Control2/VBoxContainer/HBoxContainer" unique_id=487420853]
 layout_mode = 2
 placeholder_text = "Name"
 
-[node name="Continue" type="Button" parent="CharacterBody2D/Control/VBoxContainer" unique_id=64070449]
+[node name="Continue" type="Button" parent="CharacterBody2D/Control2/VBoxContainer" unique_id=64070449]
 layout_mode = 2
 text = "Continue"
 
-[node name="Exit" type="Button" parent="CharacterBody2D/Control/VBoxContainer" unique_id=1230062133]
+[node name="Leaderboard" type="Button" parent="CharacterBody2D/Control2/VBoxContainer" unique_id=1230062133]
 layout_mode = 2
 text = "Exit Game
 
 "
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CharacterBody2D/Control" unique_id=1254849139]
-layout_mode = 0
-offset_left = -464.0
-offset_top = -80.0
-offset_right = -313.0
-offset_bottom = -17.0
-scale = Vector2(8.037277, 8.394065)
-theme_override_font_sizes/normal_font_size = 50
-text = "00:00"
-script = ExtResource("4_3o4py")
-
-[connection signal="pressed" from="CharacterBody2D/Control/VBoxContainer/HBoxContainer/NewRun" to="." method="_on_new_run_pressed"]
-[connection signal="pressed" from="CharacterBody2D/Control/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="CharacterBody2D/Control/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CharacterBody2D/Control2/VBoxContainer/HBoxContainer/NewRun" to="." method="_on_new_run_pressed"]
+[connection signal="pressed" from="CharacterBody2D/Control2/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CharacterBody2D/Control2/VBoxContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]

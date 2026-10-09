@@ -1,7 +1,7 @@
 # RichTextLabel scripti
 extends RichTextLabel
 
-@export var font_size: int = 72
+@export var font_size: int = 200
 @export var wave_amp: float = 45.0
 @export var wave_freq: float = 6.0
 
